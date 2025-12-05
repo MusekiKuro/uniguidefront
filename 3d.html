@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Модальное окно 3D-тура</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#137fec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-display bg-gray-100">
+<div class="relative flex min-h-screen w-full flex-col bg-gray-400 group/design-root" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC7KY5TzfPGlk1CiHTGpsVRvV1nZkn5uR_Pqimied1zOmXMwDxMhSK8tfv8YdzZGsQXvI4PjM1YMx_hcpyHdaLwxQ04yKxeVJwTN3VWP-G8aN-cweVU7PE8jf9sdhcrO6c8uBHN3CcHi4TZ5JwwcMbZv8ZBNpiSeyP8k-QoZqDcK_eITehb2CVeRTwMWyoOV0VU4VE3OIT0xkr4T0ECiW6pLg7nWCCefRTIev4KK1rV0xCfqZyAV6fNMAJmXZlTT8pbb6R38EmDcnk"); background-size: cover; background-position: center;'>
+<!-- This div represents a blurred background page, not part of the modal itself -->
+<div class="absolute inset-0 backdrop-blur-sm"></div>
+<!-- Modal container -->
+<div class="relative flex h-screen w-full items-center justify-center bg-black/40 p-4">
+<div class="flex w-full max-w-4xl flex-col gap-4 overflow-hidden rounded-xl bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- Modal Header -->
+<div class="flex items-center justify-between border-b border-gray-200/80 dark:border-gray-700/80 p-4 md:p-6">
+<h2 class="text-xl font-bold tracking-tight text-[#111418] dark:text-white">3D-тур по кампусу</h2>
+<button class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-gray-200/80 text-gray-600 transition-colors hover:bg-gray-300/80 dark:bg-gray-700/80 dark:text-gray-300 dark:hover:bg-gray-600/80">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<!-- Modal Content -->
+<div class="flex flex-col gap-6 p-4 pt-0 md:p-6 md:pt-0">
+<!-- Carousel -->
+<div class="relative">
+<div class="flex overflow-x-auto snap-x snap-mandatory [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden rounded-lg">
+<div class="flex items-stretch gap-4">
+<div class="flex h-full flex-shrink-0 snap-center flex-col gap-4 rounded-lg bg-white dark:bg-gray-800/50 shadow-[0_0_4px_rgba(0,0,0,0.1)] w-64">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-t-lg" data-alt="University main building with modern architecture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTv0UAztRhHw4ZsNYPkUy9Qbqardt74ls6GI-lLc6l-ockRsBafH0YFiRC7UE3L8NBoDWtwyfVlWkRSwZG5xlvugAs-BS3C3G92tiY7iQ3di-R_jLIzl0FnA_qdW-TJ8R47HgZxQsvhQXrXH5hKVuy2Zt_1LCAlzarmy8WF0k1YvbnCP9YyHp3YCrlkQ71b8VWva32rGVQ41YT0gycGsPkKXXyZ9_NBridESU6edJMaV4g0teprxcfcwcgQljvU0lK1uawWvt1FKk");'></div>
+<div class="flex flex-col flex-1 justify-between p-4 pt-0">
+<div>
+<p class="text-[#111418] dark:text-gray-100 text-base font-medium leading-normal">Главный учебный корпус</p>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Центральный вход и архитектура.</p>
+</div>
+</div>
+</div>
+<div class="flex h-full flex-shrink-0 snap-center flex-col gap-4 rounded-lg bg-white dark:bg-gray-800/50 shadow-[0_0_4px_rgba(0,0,0,0.1)] w-64">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-t-lg" data-alt="Spacious university library with many books" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCwY5tYe04qMlewYzQmWNeRXhFJ-XIicw2FVOXOqUCfjuDb8YM5cob47bniA_yb6eqwGnofP849zQMDTZh_FangSjN5i8p8_6xWA2udnIfARFzttvlJwpditrRADH31xfivkt0jq6gLsec03M3yoXCdp7rOwP6ZxD2YBqeZryVQmTV0r6PLy7TVUvI3h51fC3olVSEpx12OQJjwLTtOBW6AlU25ruCekoSrw_X_BrTifQKGYisirPgdzBf4lQkKVACCBhpLl1vCzwI");'></div>
+<div class="flex flex-col flex-1 justify-between p-4 pt-0">
+<div>
+<p class="text-[#111418] dark:text-gray-100 text-base font-medium leading-normal">Научная библиотека</p>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Читальные залы и книжный фонд.</p>
+</div>
+</div>
+</div>
+<div class="flex h-full flex-shrink-0 snap-center flex-col gap-4 rounded-lg bg-white dark:bg-gray-800/50 shadow-[0_0_4px_rgba(0,0,0,0.1)] w-64">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-t-lg" data-alt="Modern sports complex with basketball court" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC149RZEvrU4bCZflrWmKg9vlHEOrSlPeDjetZZ0bRyLON3gbI06w3xJ_S7xKrco9VVa7JeB77iSFedO_o5WJ2obj1Vdp9Vld0aATwilPhYodAmujnMH04lyOHNJd4S_nTvqnNc4RToRXwlxYz9adG3Eg3GtL0L95xLWae0AxtOGbhUc5UD9cHelYUB_eVM7SwMR9WLxRmPFWuqhz7M8ftFlCkEtDwZuqEiuVCMOgW1dd_YvJPh4nt-EFhQet8FCbezyt_LnNPuRn0");'></div>
+<div class="flex flex-col flex-1 justify-between p-4 pt-0">
+<div>
+<p class="text-[#111418] dark:text-gray-100 text-base font-medium leading-normal">Спортивный комплекс</p>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Оборудование для занятий спортом.</p>
+</div>
+</div>
+</div>
+<div class="flex h-full flex-shrink-0 snap-center flex-col gap-4 rounded-lg bg-white dark:bg-gray-800/50 shadow-[0_0_4px_rgba(0,0,0,0.1)] w-64">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-t-lg" data-alt="Comfortable student dormitory room" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBN524AGRn4v8aw3Vj8mRNJOPz_pnTJ6OpQv5BRRkZl0b3iFPSv2KgfA3-pwMOq9leH5CczCTGHInZOQv4_MIMJIg4lkFMB04NbNuUWjT5d9L_-2s5b5u3nERWKRp9ux-FSffi1-DaC1UcjYc893V6u8lTZxJl0PZEqy6wqJObWCUfYrM3rapkT2AudGzTNUI_SfCSNiJdSr7KIHQqLMLxyxtfppXr0asn-ORX8_YTEU-gse6iWZ62E-eugMywmZP0rtJVJTdQtxtg");'></div>
+<div class="flex flex-col flex-1 justify-between p-4 pt-0">
+<div>
+<p class="text-[#111418] dark:text-gray-100 text-base font-medium leading-normal">Студенческое общежитие</p>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Условия для проживания и учебы.</p>
+</div>
+</div>
+</div>
+<div class="flex h-full flex-shrink-0 snap-center flex-col gap-4 rounded-lg bg-white dark:bg-gray-800/50 shadow-[0_0_4px_rgba(0,0,0,0.1)] w-64">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-t-lg" data-alt="Large lecture hall with tiered seating" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2aCjWf92hf7ApJevOmosCK4dAWQB9eoDv7Yoia1JWGBh57Ou98559JbyyapOwc8NseyGsB_u7LphpsLMsCQXGGafnjoA-LhMw3ruse5fDgSx9ak_6L9sHpgd0ntuycv6mR8RmlRSXK-twfKruFIpuU5VRlTyd7EmmTNMthwRVWGgNrb23mbWK1QioGBqaHel4b7d6KQCuA8DE2plh1xuonN5kmPti9m1Uh-nknS-9GPFamCCAkvYU5zLMbjpaJ3MpMEwkvyTT0QA");'></div>
+<div class="flex flex-col flex-1 justify-between p-4 pt-0">
+<div>
+<p class="text-[#111418] dark:text-gray-100 text-base font-medium leading-normal">Лекционный зал</p>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Аудитория для лекций и мероприятий.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Carousel Navigation -->
+<button class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white/80 text-gray-800 shadow-md backdrop-blur-sm transition-transform hover:scale-110 dark:bg-gray-900/80 dark:text-white">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<button class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white/80 text-gray-800 shadow-md backdrop-blur-sm transition-transform hover:scale-110 dark:bg-gray-900/80 dark:text-white">
+<span class="material-symbols-outlined">arrow_forward_ios</span>
+</button>
+</div>
+<!-- CTA Button -->
+<div class="flex justify-center pt-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] transition-transform hover:scale-105 active:scale-100">
+<span class="material-symbols-outlined">play_circle</span>
+<span class="truncate">Смотреть видео-тур</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

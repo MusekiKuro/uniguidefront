@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Карточка ВУЗа (Детали)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "card-light": "#ffffff",
+              "card-dark": "#18232f",
+              "border-light": "#e5e7eb",
+              "border-dark": "#374151",
+              "text-primary-light": "#111827",
+              "text-primary-dark": "#f9fafb",
+              "text-secondary-light": "#6b7280",
+              "text-secondary-dark": "#9ca3af",
+              "accent-green": "#00C853",
+              "accent-orange": "#FF9800",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full bg-card-light dark:bg-card-dark border-b border-border-light dark:border-border-dark shadow-sm">
+<div class="flex items-center justify-between whitespace-nowrap px-6 lg:px-10 py-3 max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-text-primary-light dark:text-text-primary-dark">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">UniGuide</h2>
+</div>
+</div>
+<div class="hidden md:flex flex-1 items-center justify-center">
+<div class="flex items-center gap-9">
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="#">Universities</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="#">Programs</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="#">Compare</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Sign Up</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-background-light dark:bg-card-dark text-text-primary-light dark:text-text-primary-dark border border-border-light dark:border-border-dark hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-bold leading-normal tracking-[0.015em] transition-colors">
+<span class="truncate">Log In</span>
+</button>
+</div>
+</div>
+</header>
+<main class="w-full max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+<!-- HeaderImage -->
+<div class="bg-cover bg-center flex flex-col justify-end overflow-hidden rounded-xl min-h-80 shadow-lg" data-alt="Campus of Nazarbayev University on a sunny day" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmjDtzEMB89GkAcIuRt3lYJi4Cz5waXrzrMFtw_S5Mhfd9qHXGatNyAwNamdjzx4oL_QvU--WvFOPXiivd_uA7NacyRg7_ew9eeHYNn443r08MZojKfocZ7BPAv0ZN-8KUjQiPjRW4s1YyGM60BqwNxlaatrQUuoql8Snl8tr3yv0wfgeH_QgHLc8Q1sizwXv7Nfm0tnHeZra0g92Bws0XkzX03YCD3SsQshGDqNjtalDI6hw_I3RNlJMR8UOPcEe4W39pXeDLGCE");'>
+<div class="flex flex-col p-6 sm:p-8">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap items-center text-sm font-medium text-white/80">
+<a class="hover:text-white" href="#">Home</a>
+<span class="mx-2">/</span>
+<a class="hover:text-white" href="#">Universities</a>
+<span class="mx-2">/</span>
+<span class="text-white font-semibold">Nazarbayev University</span>
+</div>
+<h1 class="text-white tracking-tight text-4xl sm:text-5xl font-bold mt-2">Nazarbayev University</h1>
+<div class="flex items-center mt-2 gap-2 text-white/90">
+<span class="material-symbols-outlined !text-xl">location_on</span>
+<span>Astana, Kazakhstan</span>
+</div>
+</div>
+</div>
+<!-- Stats -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-8">
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<p class="text-base font-medium text-text-secondary-light dark:text-text-secondary-dark">National Ranking</p>
+<p class="tracking-tight text-3xl font-bold">#1</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<p class="text-base font-medium text-text-secondary-light dark:text-text-secondary-dark">Students</p>
+<p class="tracking-tight text-3xl font-bold">5,800</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<p class="text-base font-medium text-text-secondary-light dark:text-text-secondary-dark">Founded</p>
+<p class="tracking-tight text-3xl font-bold">2010</p>
+</div>
+<div class="flex items-center justify-center rounded-xl p-6 bg-accent-orange/10 border border-accent-orange/30">
+<button class="flex w-full items-center justify-center gap-2 rounded-lg h-12 px-6 bg-accent-orange text-white text-base font-bold shadow-lg hover:bg-accent-orange/90 transition-colors">
+<span class="material-symbols-outlined">compare_arrows</span>
+<span class="truncate">Add to Compare</span>
+</button>
+</div>
+</div>
+<div class="mt-8 lg:grid lg:grid-cols-4 lg:gap-8">
+<!-- Sticky Navigation -->
+<aside class="hidden lg:block lg:col-span-1">
+<div class="sticky top-24">
+<nav class="flex flex-col gap-1">
+<a class="flex items-center px-4 py-2.5 rounded-lg text-sm font-semibold bg-primary/10 text-primary border-l-4 border-primary" href="#about">Об университете</a>
+<a class="flex items-center px-4 py-2.5 rounded-lg text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-100 dark:hover:bg-gray-700/50 border-l-4 border-transparent" href="#programs">Академические программы</a>
+<a class="flex items-center px-4 py-2.5 rounded-lg text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-100 dark:hover:bg-gray-700/50 border-l-4 border-transparent" href="#admissions">Приём и поступление</a>
+<a class="flex items-center px-4 py-2.5 rounded-lg text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-100 dark:hover:bg-gray-700/50 border-l-4 border-transparent" href="#3d-tour">3D-тур</a>
+<a class="flex items-center px-4 py-2.5 rounded-lg text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-100 dark:hover:bg-gray-700/50 border-l-4 border-transparent" href="#international">Международное сотрудничество</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content -->
+<div class="lg:col-span-3 space-y-8">
+<!-- Tabs for mobile/tablet -->
+<div class="lg:hidden pb-3">
+<div class="flex border-b border-border-light dark:border-border-dark overflow-x-auto">
+<a class="flex flex-col items-center justify-center text-center whitespace-nowrap border-b-[3px] border-b-primary text-primary pb-3 pt-4 px-4" href="#about">
+<p class="text-sm font-bold">Об университете</p>
+</a>
+<a class="flex flex-col items-center justify-center text-center whitespace-nowrap border-b-[3px] border-b-transparent text-text-secondary-light dark:text-text-secondary-dark pb-3 pt-4 px-4" href="#programs">
+<p class="text-sm font-bold">Программы</p>
+</a>
+<a class="flex flex-col items-center justify-center text-center whitespace-nowrap border-b-[3px] border-b-transparent text-text-secondary-light dark:text-text-secondary-dark pb-3 pt-4 px-4" href="#admissions">
+<p class="text-sm font-bold">Поступление</p>
+</a>
+<a class="flex flex-col items-center justify-center text-center whitespace-nowrap border-b-[3px] border-b-transparent text-text-secondary-light dark:text-text-secondary-dark pb-3 pt-4 px-4" href="#3d-tour">
+<p class="text-sm font-bold">3D-тур</p>
+</a>
+</div>
+</div>
+<!-- About Section -->
+<div class="p-6 sm:p-8 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark" id="about">
+<h2 class="text-2xl font-bold tracking-tight">Об университете</h2>
+<p class="mt-4 text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
+                            Nazarbayev University (NU) is a modern, English-speaking research university located in Astana, the capital of Kazakhstan. Established in 2010 as a key initiative of national development, NU is committed to becoming an internationally recognized research university. The university's academic and research programs are designed in partnership with leading universities from around the world. Admission to NU is highly competitive and based entirely on merit.
+                        </p>
+</div>
+<!-- Academic Programs Section -->
+<div class="p-6 sm:p-8 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark" id="programs">
+<h2 class="text-2xl font-bold tracking-tight">Академические программы</h2>
+<div class="mt-6 -mx-6 sm:-mx-8 overflow-x-auto">
+<table class="min-w-full divide-y divide-border-light dark:divide-border-dark">
+<thead class="bg-background-light dark:bg-background-dark">
+<tr>
+<th class="py-3.5 px-6 sm:px-8 text-left text-sm font-semibold" scope="col">Program Name</th>
+<th class="py-3.5 px-6 sm:px-8 text-left text-sm font-semibold" scope="col">Minimum UNT</th>
+<th class="py-3.5 px-6 sm:px-8 text-left text-sm font-semibold" scope="col">Tuition Fee (KZT/year)</th>
+<th class="py-3.5 px-6 sm:px-8 text-left text-sm font-semibold" scope="col">Grant</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-light dark:divide-border-dark">
+<tr>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm font-medium">Computer Science</td>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm text-text-secondary-light dark:text-text-secondary-dark">135</td>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm text-text-secondary-light dark:text-text-secondary-dark">2,500,000</td>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm text-text-secondary-light dark:text-text-secondary-dark"><span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900/50 dark:text-green-300">Available</span></td>
+</tr>
+<tr>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm font-medium">Mechanical Engineering</td>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm text-text-secondary-light dark:text-text-secondary-dark">128</td>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm text-text-secondary-light dark:text-text-secondary-dark">2,500,000</td>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm text-text-secondary-light dark:text-text-secondary-dark"><span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900/50 dark:text-green-300">Available</span></td>
+</tr>
+<tr>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm font-medium">Business Administration</td>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm text-text-secondary-light dark:text-text-secondary-dark">130</td>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm text-text-secondary-light dark:text-text-secondary-dark">2,800,000</td>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm text-text-secondary-light dark:text-text-secondary-dark"><span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:bg-red-900/50 dark:text-red-300">Limited</span></td>
+</tr>
+<tr>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm font-medium">Economics</td>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm text-text-secondary-light dark:text-text-secondary-dark">125</td>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm text-text-secondary-light dark:text-text-secondary-dark">2,800,000</td>
+<td class="whitespace-nowrap py-4 px-6 sm:px-8 text-sm text-text-secondary-light dark:text-text-secondary-dark"><span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900/50 dark:text-green-300">Available</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- 3D Tour Section -->
+<div class="relative rounded-xl overflow-hidden bg-cover bg-center min-h-80 flex flex-col justify-end p-6 sm:p-8" data-alt="Modern university library with students studying" id="3d-tour" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 50%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA23w_JgVGf69PAsAlxZ3d8m74Y-l1p8ywLsmAwqQDRnLkgrLu3ngZn-Jg1PmhY8NmBjg725iy8ypgpA68sWxXZlXUER3iG61ejCpR-btyht_7AcsDPcA7sSUiDBIYi-UNhKejZGvewyTWbaWvJ3wS72Eb0kchfV2tR1OAVBjk1UlmPgPGZCqaVhxXXX1bWhujDVts47_-sGCnO8bYXna80-pHE88EQcfhoVDqBclFrAWDHaDHqWRwfpkuxQ9LxQFPNasA08MdcuXw");'>
+<div class="relative z-10">
+<h2 class="text-2xl font-bold tracking-tight text-white">Виртуальный 3D-тур</h2>
+<p class="mt-2 text-white/80 max-w-lg">Исследуйте наш кампус, лаборатории и учебные аудитории не выходя из дома.</p>
+<button class="flex mt-6 items-center justify-center gap-2 rounded-lg h-12 px-6 bg-accent-green text-white text-base font-bold shadow-lg hover:bg-accent-green/90 transition-colors">
+<span class="material-symbols-outlined">view_in_ar</span>
+<span class="truncate">Смотреть 3D-тур</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
