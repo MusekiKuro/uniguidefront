@@ -7,8 +7,8 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script>
         tailwind.config = {
             darkMode: "class",
@@ -18,6 +18,9 @@
                         "primary": "#137fec",
                         "background-light": "#f6f7f8",
                         "background-dark": "#101922",
+                        "match-high": "#00C853", // Green
+                        "match-medium": "#FF9800", // Orange
+                        "match-low": "#F44336", // Red
                     },
                     fontFamily: {
                         "display": ["Inter", "sans-serif"]
@@ -52,9 +55,9 @@
 <h2 class="text-lg font-bold tracking-tight">UniGuide</h2>
 </div>
 <div class="hidden md:flex items-center gap-9">
-<a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Home</a>
+<a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="index.html">Home</a>
 <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Search</a>
-<a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Compare</a>
+<a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="sravnenie.html">Compare</a>
 <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Profile</a>
 </div>
 <div class="flex gap-2">
@@ -70,144 +73,172 @@
 <main class="flex flex-1 justify-center py-8 px-4 sm:py-12 sm:px-6 lg:px-8">
 <div class="layout-content-container flex flex-col max-w-4xl flex-1 gap-8">
 <div class="flex flex-wrap justify-between gap-4 text-center">
-<h1 class="text-3xl sm:text-4xl font-black leading-tight tracking-tighter text-gray-900 dark:text-white w-full">
-                            По вашему запросу ИИ подобрал для вас ТОП-3 ВУЗа в Алматы с высоким шансом на грант в сфере IT
+<h1 class="text-3xl sm:text-4xl font-black leading-tight tracking-tighter text-gray-900 dark:text-white w-full" id="result-title">
+                            ИИ подбирает для вас лучшие варианты...
                         </h1>
 </div>
-<!-- University Card 1 -->
-<div class="flex flex-col rounded-xl shadow-lg bg-white dark:bg-gray-900/50 overflow-hidden">
-<div class="flex flex-col md:flex-row items-stretch">
-<div class="flex-shrink-0 w-full md:w-48 bg-gray-50 dark:bg-gray-800 p-6 flex items-center justify-center">
-<img class="h-24 object-contain" data-alt="Логотип Международного университета информационных технологий" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHsskor7WwEgNg7Lnm6AX_AKDS_tor3AUVlIesRBEti1qWQjRJs6i9_-NhcsjxwVUbYFcXU4Xto-18vimK4O18GuTI1s8D39Z12HrdmbFncTS2isJE9t34p65DPszIDxnDjUhqnojG0WyOoB3ZJlADf1fE4MJUdxrtqM7JMBLR88oLzISVFO6gW8IPq88IKIRTYNn8yno4XwGinUfa6OjcMzdq1C4crIt0lf576TP5iNPzUSSzYQ9ggdRU4AWXWyC3VFqTR5EAYUw"/>
-</div>
-<div class="flex-1 p-6 flex flex-col justify-between gap-4">
-<div>
-<p class="text-sm font-medium text-gray-500 dark:text-gray-400">Алматы</p>
-<p class="text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white mt-1">Международный университет информационных технологий</p>
-<p class="text-base text-gray-600 dark:text-gray-300 mt-2">Ключевая программа: Компьютерные науки</p>
-</div>
-<div class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-end mt-4">
-<button class="flex items-center justify-center gap-2 min-w-[84px] cursor-pointer overflow-hidden rounded-lg h-10 px-4 bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold leading-normal tracking-wide">
-<span class="material-symbols-outlined text-base">add_circle_outline</span>
-<span class="truncate">Добавить к сравнению</span>
-</button>
-<button class="flex items-center justify-center min-w-[84px] cursor-pointer overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide">
-<span class="truncate">Подробнее</span>
-</button>
-</div>
-</div>
-<div class="flex-shrink-0 w-full md:w-64 border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-800 p-6 flex flex-col justify-center gap-5">
-<div class="flex flex-col gap-2">
-<div class="flex justify-between items-baseline">
-<p class="text-sm font-medium text-gray-900 dark:text-white">Шанс на грант</p>
-<p class="text-lg font-bold text-green-500">92%</p>
-</div>
-<div class="w-full rounded-full bg-gray-200 dark:bg-gray-700 h-2">
-<div class="h-2 rounded-full bg-green-500" style="width: 92%;"></div>
-</div>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex justify-between items-baseline">
-<p class="text-sm font-medium text-gray-900 dark:text-white">Проходной ЕНТ</p>
-<p class="text-sm font-medium text-orange-500">Высокий</p>
-</div>
-<div class="w-full rounded-full bg-gray-200 dark:bg-gray-700 h-2">
-<div class="h-2 rounded-full bg-orange-500" style="width: 85%;"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- University Card 2 -->
-<div class="flex flex-col rounded-xl shadow-lg bg-white dark:bg-gray-900/50 overflow-hidden">
-<div class="flex flex-col md:flex-row items-stretch">
-<div class="flex-shrink-0 w-full md:w-48 bg-gray-50 dark:bg-gray-800 p-6 flex items-center justify-center">
-<img class="h-24 object-contain" data-alt="Логотип Университета имени Сулеймана Демиреля" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnGCDcoMkgJqRPL2-f72Ql24q_b5X8nd6xGUbksN2ep4OeUJdDJ6azYuXnIuoyytS5_230od3gU_kq9irfFEGMDuoDV83G-gjfAnXpxZo5C8Lz7Ja2LAG2KeCXl2ku-k83g8G-VWMUdP9U6a3rMgAPondR1YkCpcwInygl3OgXSu3RlgmhZDYo8Ux9QfmA84Qu7KSZAkxaciUH0j50g0z5kcefBL3eWYfzB4T4IZDvrKv3VjlL0CSCw8NXT5ftWSv8KzJsPZU_R6I"/>
-</div>
-<div class="flex-1 p-6 flex flex-col justify-between gap-4">
-<div>
-<p class="text-sm font-medium text-gray-500 dark:text-gray-400">Алматы</p>
-<p class="text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white mt-1">Университет имени Сулеймана Демиреля</p>
-<p class="text-base text-gray-600 dark:text-gray-300 mt-2">Ключевая программа: Информационные системы</p>
-</div>
-<div class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-end mt-4">
-<button class="flex items-center justify-center gap-2 min-w-[84px] cursor-pointer overflow-hidden rounded-lg h-10 px-4 bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold leading-normal tracking-wide">
-<span class="material-symbols-outlined text-base">add_circle_outline</span>
-<span class="truncate">Добавить к сравнению</span>
-</button>
-<button class="flex items-center justify-center min-w-[84px] cursor-pointer overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide">
-<span class="truncate">Подробнее</span>
-</button>
-</div>
-</div>
-<div class="flex-shrink-0 w-full md:w-64 border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-800 p-6 flex flex-col justify-center gap-5">
-<div class="flex flex-col gap-2">
-<div class="flex justify-between items-baseline">
-<p class="text-sm font-medium text-gray-900 dark:text-white">Шанс на грант</p>
-<p class="text-lg font-bold text-green-500">88%</p>
-</div>
-<div class="w-full rounded-full bg-gray-200 dark:bg-gray-700 h-2">
-<div class="h-2 rounded-full bg-green-500" style="width: 88%;"></div>
-</div>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex justify-between items-baseline">
-<p class="text-sm font-medium text-gray-900 dark:text-white">Проходной ЕНТ</p>
-<p class="text-sm font-medium text-orange-500">Высокий</p>
-</div>
-<div class="w-full rounded-full bg-gray-200 dark:bg-gray-700 h-2">
-<div class="h-2 rounded-full bg-orange-500" style="width: 82%;"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- University Card 3 -->
-<div class="flex flex-col rounded-xl shadow-lg bg-white dark:bg-gray-900/50 overflow-hidden">
-<div class="flex flex-col md:flex-row items-stretch">
-<div class="flex-shrink-0 w-full md:w-48 bg-gray-50 dark:bg-gray-800 p-6 flex items-center justify-center">
-<img class="h-24 object-contain" data-alt="Логотип Казахского национального университета имени аль-Фараби" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIeSTq39tC-tjwIOe0jbgS5gMG3LlaXpgWZuKU2iNP4xdf6SkxwAEdZi4ZW-Lx0I8fk6mmHpN9Z4MiKdxB-1S6QU4wW_Sw_FB0sNOCxQZd5SZFoMu2J6ALxjwmFf7NUfAPtYt4ZxpDPeGidVc-7qH7QkUPQV6qzSi7eH-84bnLuI0W_OiKZUHxOnC1JRknOh_qoIh_OddptxRTAc72V5i4HBna7N6cA4tooC9TTCOQnV_IJajvyG2Y1TCt9usQpFrZXBiz0WauS6s"/>
-</div>
-<div class="flex-1 p-6 flex flex-col justify-between gap-4">
-<div>
-<p class="text-sm font-medium text-gray-500 dark:text-gray-400">Алматы</p>
-<p class="text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white mt-1">Казахский национальный университет имени аль-Фараби</p>
-<p class="text-base text-gray-600 dark:text-gray-300 mt-2">Ключевая программа: Вычислительная техника и ПО</p>
-</div>
-<div class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-end mt-4">
-<button class="flex items-center justify-center gap-2 min-w-[84px] cursor-pointer overflow-hidden rounded-lg h-10 px-4 bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold leading-normal tracking-wide">
-<span class="material-symbols-outlined text-base">add_circle_outline</span>
-<span class="truncate">Добавить к сравнению</span>
-</button>
-<button class="flex items-center justify-center min-w-[84px] cursor-pointer overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide">
-<span class="truncate">Подробнее</span>
-</button>
-</div>
-</div>
-<div class="flex-shrink-0 w-full md:w-64 border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-800 p-6 flex flex-col justify-center gap-5">
-<div class="flex flex-col gap-2">
-<div class="flex justify-between items-baseline">
-<p class="text-sm font-medium text-gray-900 dark:text-white">Шанс на грант</p>
-<p class="text-lg font-bold text-amber-500">75%</p>
-</div>
-<div class="w-full rounded-full bg-gray-200 dark:bg-gray-700 h-2">
-<div class="h-2 rounded-full bg-amber-500" style="width: 75%;"></div>
-</div>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex justify-between items-baseline">
-<p class="text-sm font-medium text-gray-900 dark:text-white">Проходной ЕНТ</p>
-<p class="text-sm font-medium text-amber-500">Средний</p>
-</div>
-<div class="w-full rounded-full bg-gray-200 dark:bg-gray-700 h-2">
-<div class="h-2 rounded-full bg-amber-500" style="width: 78%;"></div>
-</div>
-</div>
-</div>
-</div>
+<div id="recommendations-container" class="flex flex-col gap-6">
+    <div class="p-6 text-center text-gray-500 dark:text-gray-400">Загрузка рекомендаций...</div>
 </div>
 </div>
 </main>
 </div>
 </div>
+
+<script>
+    const API_BASE_URL = 'http://127.0.0.1:8000/api';
+    const container = document.getElementById('recommendations-container');
+    const title = document.getElementById('result-title');
+
+    // Для демо используем тестовый запрос. В реальном приложении он придет из index.html
+    const DEFAULT_QUERY = "Я набрал 88 баллов ЕНТ, хочу учиться в Алматы, на гранте, специальность B057";
+
+    // Вспомогательная функция для определения цвета Match Score
+    function getScoreColor(score) {
+        if (score >= 80) return 'match-high';
+        if (score >= 50) return 'match-medium';
+        return 'match-low';
+    }
+
+    // Вспомогательная функция для модального окна AI-объяснения
+    function showAIExplanation(title, explanation) {
+        alert(`${title} (Объяснение ИИ):\n\n${explanation}`);
+    }
+
+
+    // Функция рендеринга одной карточки
+    function renderCard(rec) {
+        const uni = rec.university;
+        const grantPercent = Math.round(rec.grant_percentage);
+        const matchScore = Math.round(rec.match_score);
+        const scoreColor = getScoreColor(matchScore);
+        const grantColor = getScoreColor(grantPercent);
+        const uniId = uni.id;
+        
+        // Ключевая программа для отображения на карточке
+        const keyProgram = uni.programs[0] ? uni.programs[0].name : 'Нет данных';
+
+        // Создание HTML-карточки
+        const card = document.createElement('div');
+        card.className = "flex flex-col rounded-xl shadow-lg bg-white dark:bg-gray-900/50 overflow-hidden";
+        card.innerHTML = `
+            <div class="flex flex-col md:flex-row items-stretch">
+                <div class="flex-shrink-0 w-full md:w-48 bg-gray-50 dark:bg-gray-800 p-6 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-7xl text-primary/80">school</span>
+                </div>
+
+                <div class="flex-1 p-6 flex flex-col justify-between gap-4">
+                    <div>
+                        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">${uni.city}</p>
+                        <p class="text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white mt-1">${uni.name}</p>
+                        <p class="text-base text-gray-600 dark:text-gray-300 mt-2">Ключевая программа: ${keyProgram}</p>
+                        <button class="text-xs font-medium text-primary hover:text-primary/80 mt-1 underline" 
+                                onclick="showAIExplanation('${uni.name}', \`${rec.ai_explanation}\`)">
+                            Посмотреть AI-объяснение
+                        </button>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-end mt-4">
+                        <a href="sravnenie.html?add=${uniId}" class="flex items-center justify-center gap-2 min-w-[84px] cursor-pointer overflow-hidden rounded-lg h-10 px-4 bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold leading-normal tracking-wide">
+                            <span class="material-symbols-outlined text-base">add_circle_outline</span>
+                            <span class="truncate">Добавить к сравнению</span>
+                        </a>
+                        <a href="vuz.html?id=${uniId}" class="flex items-center justify-center min-w-[84px] cursor-pointer overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide">
+                            <span class="truncate">Подробнее</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-full md:w-64 border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-800 p-6 flex flex-col justify-center gap-5">
+                    
+                    <div class="flex flex-col gap-2">
+                        <div class="flex justify-between items-baseline">
+                            <p class="text-sm font-medium text-gray-900 dark:text-white">Совпадение (Match Score)</p>
+                            <p class="text-lg font-bold text-${scoreColor}">${matchScore}%</p>
+                        </div>
+                        <div class="w-full rounded-full bg-gray-200 dark:bg-gray-700 h-2">
+                            <div class="h-2 rounded-full bg-${scoreColor}" style="width: ${matchScore}%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col gap-2">
+                        <div class="flex justify-between items-baseline">
+                            <p class="text-sm font-medium text-gray-900 dark:text-white">Шанс на грант</p>
+                            <p class="text-sm font-medium text-${grantColor}">${rec.grant_chance}</p>
+                        </div>
+                        <div class="w-full rounded-full bg-gray-200 dark:bg-gray-700 h-2">
+                            <div class="h-2 rounded-full bg-${grantColor}" style="width: ${grantPercent}%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        container.appendChild(card);
+    }
+
+    // Основная логика загрузки данных
+    async function loadRecommendations() {
+        // Проверяем, пришли ли данные из чата
+        const storedData = localStorage.getItem('recommendations_data');
+        let data = null;
+
+        if (storedData) {
+            data = JSON.parse(storedData);
+            // Очищаем, чтобы при перезагрузке страницы не было старых данных
+            // localStorage.removeItem('recommendations_data'); 
+        }
+
+        // Если данные есть, рендерим их
+        if (data && data.recommendations && Array.isArray(data.recommendations) && data.recommendations.length > 0) {
+            container.innerHTML = '';
+            const totalFound = data.recommendations.length;
+            title.innerHTML = `По вашему запросу ИИ подобрал для вас ТОП-${totalFound} вариантов в сфере IT`;
+            data.recommendations.forEach(renderCard);
+        } else {
+            // Если данных нет, делаем обычный запрос (фоллбэк, как было раньше)
+            // Это также может быть вызвано, если пользователь просто открыл result.html
+            await loadRecommendationsFallback();
+        }
+    }
+    
+    // Новая фоллбэк функция (дублирует старую логику)
+    async function loadRecommendationsFallback() {
+         container.innerHTML = '<div class="p-6 text-center text-primary font-bold">Данные чата не найдены. Выполняется стандартный запрос...</div>';
+         
+         try {
+            const response = await fetch(`${API_BASE_URL}/recommend-by-text`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query: DEFAULT_QUERY })
+            });
+            // ... (дальше логика из вашего старого loadRecommendations) ...
+            
+             if (!response.ok) {
+                const errorBody = await response.json().catch(() => ({ detail: `Unknown error. Status: ${response.status}` }));
+                throw new Error(`Ошибка API: ${errorBody.detail}`);
+            }
+
+            const data = await response.json();
+            
+            if (data && data.recommendations && Array.isArray(data.recommendations) && data.recommendations.length > 0) {
+                container.innerHTML = '';
+                const totalFound = data.recommendations.length;
+                title.innerHTML = `По вашему запросу ИИ подобрал для вас ТОП-${totalFound} вариантов в сфере IT`;
+                data.recommendations.forEach(renderCard);
+            } else {
+                container.innerHTML = '<div class="p-6 text-center text-gray-500 dark:text-gray-400">К сожалению, по вашим критериям вузы не найдены. Попробуйте изменить запрос.</div>';
+                title.innerHTML = `Результаты подбора`;
+            }
+
+
+         } catch (error) {
+            console.error("Ошибка при загрузке рекомендаций:", error);
+            container.innerHTML = `<div class="p-6 text-center text-red-500">Не удалось загрузить рекомендации. Ошибка: ${error.message}</div>`;
+            title.innerHTML = `Ошибка загрузки`;
+        }
+    }
+    
+    // Запускаем загрузку
+    loadRecommendations();
+</script>
 </body></html>

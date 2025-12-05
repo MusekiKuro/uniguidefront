@@ -7,10 +7,10 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script>
-      tailwind.config = {
+    tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
@@ -25,17 +25,13 @@
             borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
           },
         },
-      }
-    </script>
+    }
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings:
-            'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 24
-        }
-    </style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+</style>
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark">
 <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
@@ -82,140 +78,21 @@
 </div>
 <div class="px-4 py-3 @container">
 <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark shadow-sm">
-<table class="w-full text-left">
-<thead>
-<tr class="bg-white dark:bg-background-dark">
-<th class="px-4 py-5 text-gray-800 dark:text-gray-200 min-w-[200px] w-1/4 text-sm font-medium leading-normal sticky left-0 z-10 bg-white dark:bg-background-dark">
-                                            Параметр
-                                        </th>
-<th class="px-4 py-5 min-w-[240px] w-1/4">
-<div class="flex justify-between items-center">
-<span class="text-gray-900 dark:text-white text-sm font-medium leading-normal">Nazarbayev University</span>
-<button class="text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-500">
-<span class="material-symbols-outlined text-xl">close</span>
-</button>
-</div>
-</th>
-<th class="px-4 py-5 min-w-[240px] w-1/4">
-<div class="flex justify-between items-center">
-<span class="text-gray-900 dark:text-white text-sm font-medium leading-normal">KBTU</span>
-<button class="text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-500">
-<span class="material-symbols-outlined text-xl">close</span>
-</button>
-</div>
-</th>
-<th class="px-4 py-5 min-w-[240px] w-1/4">
-<button class="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-700 p-3 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-<span class="material-symbols-outlined">add</span>
-<span class="text-sm font-bold">Добавить ВУЗ</span>
-</button>
-</th>
-</tr>
+<table class="w-full text-left" id="comparison-table">
+<thead id="table-head">
 </thead>
-<tbody>
-<tr class="border-t border-t-gray-200 dark:border-t-gray-800">
-<td class="px-4 py-4 min-h-[72px] text-gray-800 dark:text-gray-200 text-sm font-normal leading-normal sticky left-0 z-10 bg-white dark:bg-background-dark">Город</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Astana</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Almaty</td>
-<td class="px-4 py-4 min-h-[72px]"></td>
-</tr>
-<tr class="border-t border-t-gray-200 dark:border-t-gray-800">
-<td class="px-4 py-4 min-h-[72px] text-gray-800 dark:text-gray-200 text-sm font-normal leading-normal sticky left-0 z-10 bg-white dark:bg-background-dark">Тип ВУЗа</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">National</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Private</td>
-<td class="px-4 py-4 min-h-[72px]"></td>
-</tr>
-<tr class="border-t border-t-gray-200 dark:border-t-gray-800">
-<td class="px-4 py-4 min-h-[72px] text-gray-800 dark:text-gray-200 text-sm font-normal leading-normal sticky left-0 z-10 bg-white dark:bg-background-dark">Проходной балл ЕНТ (ИТ)</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">135</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">
-<div class="flex items-center gap-2">
-<span>125</span>
-<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900 px-2 py-0.5 text-xs font-medium text-green-700 dark:text-green-300">Лучший балл</span>
-</div>
-</td>
-<td class="px-4 py-4 min-h-[72px]"></td>
-</tr>
-<tr class="border-t border-t-gray-200 dark:border-t-gray-800">
-<td class="px-4 py-4 min-h-[72px] text-gray-800 dark:text-gray-200 text-sm font-normal leading-normal sticky left-0 z-10 bg-white dark:bg-background-dark">Стоимость обучения</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">2,500,000 ₸</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">
-<div class="flex items-center gap-2">
-<span>1,800,000 ₸</span>
-<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900 px-2 py-0.5 text-xs font-medium text-green-700 dark:text-green-300">Выгоднее</span>
-</div>
-</td>
-<td class="px-4 py-4 min-h-[72px]"></td>
-</tr>
-<tr class="border-t border-t-gray-200 dark:border-t-gray-800">
-<td class="px-4 py-4 min-h-[72px] text-gray-800 dark:text-gray-200 text-sm font-normal leading-normal sticky left-0 z-10 bg-white dark:bg-background-dark">Наличие грантов</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Да</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Да</td>
-<td class="px-4 py-4 min-h-[72px]"></td>
-</tr>
-<tr class="border-t border-t-gray-200 dark:border-t-gray-800">
-<td class="px-4 py-4 min-h-[72px] text-gray-800 dark:text-gray-200 text-sm font-normal leading-normal sticky left-0 z-10 bg-white dark:bg-background-dark">Общежитие</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Да, 50,000 ₸/мес.</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">
-<div class="flex items-center gap-2">
-<span>Да, 45,000 ₸/мес.</span>
-<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900 px-2 py-0.5 text-xs font-medium text-green-700 dark:text-green-300">Выгоднее</span>
-</div>
-</td>
-<td class="px-4 py-4 min-h-[72px]"></td>
-</tr>
-<tr class="border-t border-t-gray-200 dark:border-t-gray-800">
-<td class="px-4 py-4 min-h-[72px] text-gray-800 dark:text-gray-200 text-sm font-normal leading-normal sticky left-0 z-10 bg-white dark:bg-background-dark">Количество ИТ-программ</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">8</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">
-<div class="flex items-center gap-2">
-<span>12</span>
-<span class="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900 px-2 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-300">Больше выбор</span>
-</div>
-</td>
-<td class="px-4 py-4 min-h-[72px]"></td>
-</tr>
-<tr class="border-t border-t-gray-200 dark:border-t-gray-800">
-<td class="px-4 py-4 min-h-[72px] text-gray-800 dark:text-gray-200 text-sm font-normal leading-normal sticky left-0 z-10 bg-white dark:bg-background-dark">Наличие 3D-тура</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Да</td>
-<td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Нет</td>
-<td class="px-4 py-4 min-h-[72px]"></td>
-</tr>
-<tr class="border-t border-t-gray-200 dark:border-t-gray-800">
-<td class="px-4 py-6 sticky left-0 z-10 bg-white dark:bg-background-dark"></td>
-<td class="px-4 py-6">
-<div class="flex flex-col sm:flex-row flex-1 gap-3 flex-wrap justify-start">
-<button class="flex min-w-[84px] max-w-[480px] flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]">
-<span class="truncate">Подать заявку</span>
-</button>
-<button class="flex min-w-[84px] max-w-[480px] flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-base font-bold leading-normal tracking-[0.015em]">
-<span class="truncate">Подробнее</span>
-</button>
-</div>
-</td>
-<td class="px-4 py-6">
-<div class="flex flex-col sm:flex-row flex-1 gap-3 flex-wrap justify-start">
-<button class="flex min-w-[84px] max-w-[480px] flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]">
-<span class="truncate">Подать заявку</span>
-</button>
-<button class="flex min-w-[84px] max-w-[480px] flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-base font-bold leading-normal tracking-[0.015em]">
-<span class="truncate">Подробнее</span>
-</button>
-</div>
-</td>
-<td class="px-4 py-6"></td>
-</tr>
+<tbody id="table-body">
 </tbody>
 </table>
 </div>
 </div>
-<div class="p-4">
+<div class="p-4" id="no-comparison-message" style="display: none;">
 <div class="flex flex-col items-center gap-6 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700 px-6 py-14">
 <div class="flex max-w-lg flex-col items-center gap-2 text-center">
 <p class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Нет выбранных ВУЗов для сравнения?</p>
 <p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">
-                                    Начните с добавления университетов в список сравнения, чтобы увидеть их ключевые различия и сделать осознанный выбор.
-                                </p>
+                                        Начните с добавления университетов в список сравнения, чтобы увидеть их ключевые различия и сделать осознанный выбор.
+                                    </p>
 </div>
 <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm font-bold leading-normal tracking-[0.015em]">
 <span class="truncate">Добавить ВУЗ для сравнения</span>
@@ -226,4 +103,213 @@
 </main>
 </div>
 </div>
+<script>
+    // URL твоего работающего бэкенда
+    const API_BASE_URL = 'http://127.0.0.1:8000/api';
+
+    // Список ID вузов для сравнения. 
+    // В реальном приложении этот список нужно получать из URL-параметров или LocalStorage.
+    // Используем ID 1, 2, 4 (KBTU, SDU, Satbayev) для примера.
+    const DEFAULT_UNI_IDS = [1, 2, 4]; 
+    
+    // Вспомогательная функция для форматирования денег (например, 1000000 -> 1 000 000 ₸)
+    function formatCurrency(amount) {
+        if (amount === 0 || amount === null || isNaN(amount)) return 'Бесплатно';
+        if (typeof amount === 'number') {
+             return new Intl.NumberFormat('ru-RU', { 
+                style: 'currency', 
+                currency: 'KZT', 
+                minimumFractionDigits: 0 
+            }).format(amount).replace('KZT', '₸');
+        }
+        return amount;
+    }
+
+    // Главная функция для загрузки и отрисовки данных
+    async function loadComparisonData() {
+        const table = document.getElementById('comparison-table');
+        const head = document.getElementById('table-head');
+        const body = document.getElementById('table-body');
+        const noDataMessage = document.getElementById('no-comparison-message');
+        
+        head.innerHTML = '';
+        body.innerHTML = '';
+        table.style.display = 'table';
+        noDataMessage.style.display = 'none';
+
+        if (DEFAULT_UNI_IDS.length < 2) {
+             table.style.display = 'none';
+             noDataMessage.style.display = 'block';
+             return;
+        }
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/compare`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'accept': 'application/json'
+                },
+                body: JSON.stringify({ university_ids: DEFAULT_UNI_IDS })
+            });
+
+            if (!response.ok) {
+                const errorBody = await response.json().catch(() => ({ detail: `Unknown error. Status: ${response.status}` }));
+                throw new Error(`Ошибка API: ${errorBody.detail}`);
+            }
+
+            const data = await response.json();
+            const comparisonData = data.comparison;
+            
+            if (comparisonData.universities.length < 2) {
+                table.style.display = 'none';
+                noDataMessage.style.display = 'block';
+                return; 
+            }
+
+            renderTableHeader(head, comparisonData.universities);
+            renderTableBody(body, comparisonData.metrics, comparisonData.universities.length);
+
+        } catch (error) {
+            console.error("Ошибка при загрузке данных сравнения:", error);
+            body.innerHTML = `<tr><td colspan="${DEFAULT_UNI_IDS.length + 1}" class="px-4 py-4 text-red-500 text-center">Ошибка загрузки данных: ${error.message}. Проверьте сервер и консоль.</td></tr>`;
+        }
+    }
+
+    // ----------------------
+    // Отрисовка шапки таблицы (Названия ВУЗов)
+    // ----------------------
+    function renderTableHeader(headElement, universities) {
+        // *ИСПРАВЛЕНИЕ: Удалено создание вложенного thead.*
+        const row = document.createElement('tr');
+        row.className = 'bg-white dark:bg-background-dark';
+        
+        // 1. Столбец "Параметр"
+        row.innerHTML += `
+            <th class="px-4 py-5 text-gray-800 dark:text-gray-200 min-w-[200px] w-1/4 text-sm font-medium leading-normal sticky left-0 z-10 bg-white dark:bg-background-dark">
+                Параметр
+            </th>
+        `;
+
+        // 2. Столбцы для каждого ВУЗа
+        universities.forEach(uni => {
+            row.innerHTML += `
+                <th class="px-4 py-5 min-w-[240px] w-1/4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-900 dark:text-white text-sm font-medium leading-normal">${uni.name}</span>
+                        <button class="text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-500">
+                            <span class="material-symbols-outlined text-xl">close</span>
+                        </button>
+                    </div>
+                </th>
+            `;
+        });
+        
+        // 3. Столбец "Добавить ВУЗ"
+        row.innerHTML += `
+            <th class="px-4 py-5 min-w-[240px] w-1/4">
+                <button class="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-700 p-3 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                    <span class="material-symbols-outlined">add</span>
+                    <span class="text-sm font-bold">Добавить ВУЗ</span>
+                </button>
+            </th>
+        `;
+        
+        headElement.appendChild(row); // *ИСПРАВЛЕНИЕ: Аппендируем tr прямо в thead*
+    }
+
+    // ----------------------
+    // Отрисовка тела таблицы (Метрики)
+    // ----------------------
+    function renderTableBody(bodyElement, metrics, numUnis) {
+        metrics.forEach((metric, index) => {
+            const row = document.createElement('tr');
+            row.className = 'border-t border-t-gray-200 dark:border-t-gray-800';
+
+            // 1. Ячейка с названием параметра (Sticky)
+            row.innerHTML += `
+                <td class="px-4 py-4 min-h-[72px] text-gray-800 dark:text-gray-200 text-sm font-normal leading-normal sticky left-0 z-10 bg-white dark:bg-background-dark">
+                    ${metric.label}
+                </td>
+            `;
+
+            // 2. Ячейки со значениями для каждого ВУЗа
+            metric.values.forEach(value => {
+                let displayValue = value;
+                
+                if (metric.key.includes('cost') || metric.key.includes('avg_cost')) {
+                    displayValue = formatCurrency(value);
+                } else if (metric.key === 'dormitory') {
+                    displayValue = value;
+                }
+                
+                // Логика подсветки
+                let tag = '';
+                const allValues = metrics.find(m => m.key === metric.key).values;
+                const numericValues = allValues.filter(v => typeof v === 'number' && v !== null);
+
+                if (metric.key === 'avg_cost') {
+                    if (value === Math.min(...numericValues.filter(c => c > 0))) {
+                        tag = '<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900 px-2 py-0.5 text-xs font-medium text-green-700 dark:text-green-300">Выгоднее</span>';
+                    }
+                } else if (metric.key === 'programs_count') {
+                    if (value === Math.max(...numericValues)) {
+                        tag = '<span class="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900 px-2 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-300">Больше выбор</span>';
+                    }
+                } else if (metric.key === 'min_ent_score') {
+                    if (value === Math.min(...numericValues)) {
+                         tag = '<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900 px-2 py-0.5 text-xs font-medium text-green-700 dark:text-green-300">Проще поступить</span>';
+                    }
+                }
+                
+                row.innerHTML += `
+                    <td class="px-4 py-4 min-h-[72px] text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">
+                        <div class="flex items-center gap-2">
+                            <span>${displayValue}</span>
+                            ${tag}
+                        </div>
+                    </td>
+                `;
+            });
+
+            // 3. Пустая ячейка для последней колонки ("Добавить ВУЗ")
+            row.innerHTML += `<td class="px-4 py-4 min-h-[72px]"></td>`;
+            bodyElement.appendChild(row);
+        });
+        
+        // Добавляем строку с кнопками "Подробнее/Подать заявку"
+        addFooterButtons(bodyElement, numUnis);
+    }
+    
+    function addFooterButtons(bodyElement, numUnis) {
+        const row = document.createElement('tr');
+        row.className = 'border-t border-t-gray-200 dark:border-t-gray-800';
+        
+        // Пустая ячейка для колонки "Параметр"
+        row.innerHTML += '<td class="px-4 py-6 sticky left-0 z-10 bg-white dark:bg-background-dark"></td>';
+        
+        for (let i = 0; i < numUnis; i++) {
+            const uniId = DEFAULT_UNI_IDS[i]; 
+            
+            row.innerHTML += `
+                <td class="px-4 py-6">
+                    <div class="flex flex-col sm:flex-row flex-1 gap-3 flex-wrap justify-start">
+                        <button class="flex min-w-[84px] max-w-[480px] flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]">
+                            <span class="truncate">Подать заявку</span>
+                        </button>
+                        <a href="vuz.html?id=${uniId}" class="flex min-w-[84px] max-w-[480px] flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-base font-bold leading-normal tracking-[0.015em]">
+                            <span class="truncate">Подробнее</span>
+                        </a>
+                    </div>
+                </td>
+            `;
+        }
+        
+        // Пустая ячейка для последней колонки
+        row.innerHTML += `<td class="px-4 py-6"></td>`;
+        bodyElement.appendChild(row);
+    }
+    
+    loadComparisonData();
+</script>
 </body></html>
