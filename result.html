@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-
-<html class="light" lang="ru"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Экран Результатов (ТОП-3) - UniGuide</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script>
+<html class="light" lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Экран Результатов - UniGuide</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -18,9 +18,9 @@
                         "primary": "#137fec",
                         "background-light": "#f6f7f8",
                         "background-dark": "#101922",
-                        "match-high": "#00C853", // Green
-                        "match-medium": "#FF9800", // Orange
-                        "match-low": "#F44336", // Red
+                        "match-high": "#00C853",
+                        "match-medium": "#FF9800",
+                        "match-low": "#F44336",
                     },
                     fontFamily: {
                         "display": ["Inter", "sans-serif"]
@@ -35,7 +35,7 @@
             },
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
@@ -43,84 +43,104 @@
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark">
 <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<header class="sticky top-0 z-10 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-solid border-gray-200 dark:border-gray-800">
-<div class="flex items-center justify-between whitespace-nowrap px-4 sm:px-8 md:px-10 py-3 max-w-7xl mx-auto">
-<div class="flex items-center gap-4 text-gray-900 dark:text-white">
-<div class="size-8 text-primary">
-<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
-</svg>
-</div>
-<h2 class="text-lg font-bold tracking-tight">UniGuide</h2>
-</div>
-<div class="hidden md:flex items-center gap-9">
-<a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="index.html">Home</a>
-<a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Search</a>
-<a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="sravnenie.html">Compare</a>
-<a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Profile</a>
-</div>
-<div class="flex gap-2">
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide">
-<span class="truncate">Sign Up</span>
-</button>
-<button class="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white text-sm font-bold leading-normal tracking-wide">
-<span class="truncate">Log In</span>
-</button>
-</div>
-</div>
-</header>
-<main class="flex flex-1 justify-center py-8 px-4 sm:py-12 sm:px-6 lg:px-8">
-<div class="layout-content-container flex flex-col max-w-4xl flex-1 gap-8">
-<div class="flex flex-wrap justify-between gap-4 text-center">
-<h1 class="text-3xl sm:text-4xl font-black leading-tight tracking-tighter text-gray-900 dark:text-white w-full" id="result-title">
-                            ИИ подбирает для вас лучшие варианты...
-                        </h1>
-</div>
-<div id="recommendations-container" class="flex flex-col gap-6">
-    <div class="p-6 text-center text-gray-500 dark:text-gray-400">Загрузка рекомендаций...</div>
-</div>
-</div>
-</main>
-</div>
+    <div class="layout-container flex h-full grow flex-col">
+        <header class="sticky top-0 z-10 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-solid border-gray-200 dark:border-gray-800">
+            <div class="flex items-center justify-between whitespace-nowrap px-4 sm:px-8 md:px-10 py-3 max-w-7xl mx-auto">
+                <div class="flex items-center gap-4 text-gray-900 dark:text-white">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 24px;">school</span>
+                    </div>
+                    <h2 class="text-lg font-bold tracking-tight">UniGuide</h2>
+                </div>
+                <div class="hidden md:flex items-center gap-9">
+                    <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="index.html">Главная</a>
+                    <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Поиск</a>
+                    <a class="text-sm font-medium text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="sravnenie.html">Сравнить</a>
+                </div>
+                <div class="flex gap-2">
+                    <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:bg-opacity-90 transition-all">
+                        <span class="truncate">Регистрация</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <main class="flex flex-1 justify-center py-8 px-4 sm:py-12 sm:px-6 lg:px-8">
+            <div class="layout-content-container flex flex-col max-w-4xl flex-1 gap-8">
+                <!-- Search Query Display -->
+                <div class="flex flex-col gap-2">
+                    <a href="index.html" class="text-primary hover:text-primary/80 text-sm font-medium flex items-center gap-1">
+                        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+                        Новый поиск
+                    </a>
+                    <div class="bg-white dark:bg-gray-900/50 rounded-lg p-4 border border-gray-200 dark:border-gray-800">
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Ваш запрос:</p>
+                        <p id="search-query-display" class="text-base font-medium text-gray-900 dark:text-white mt-1">Загрузка...</p>
+                    </div>
+                </div>
+                
+                <!-- Results Title -->
+                <div class="flex flex-wrap justify-between gap-4">
+                    <h1 class="text-3xl sm:text-4xl font-black leading-tight tracking-tighter text-gray-900 dark:text-white w-full" id="result-title">
+                        ИИ подбирает для вас лучшие варианты...
+                    </h1>
+                </div>
+                
+                <!-- Recommendations Container -->
+                <div id="recommendations-container" class="flex flex-col gap-6">
+                    <div class="flex items-center justify-center p-12">
+                        <div class="flex flex-col items-center gap-4">
+                            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                            <p class="text-gray-500 dark:text-gray-400">Загрузка рекомендаций...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </div>
 
 <script>
+    // ===== КОНФИГУРАЦИЯ API =====
+    // TODO: После деплоя backend замените на реальный URL
     const API_BASE_URL = 'http://127.0.0.1:8000/api';
+    
     const container = document.getElementById('recommendations-container');
     const title = document.getElementById('result-title');
+    const queryDisplay = document.getElementById('search-query-display');
 
-    // Для демо используем тестовый запрос. В реальном приложении он придет из index.html
-    const DEFAULT_QUERY = "Я набрал 88 баллов ЕНТ, хочу учиться в Алматы, на гранте, специальность B057";
-
-    // Вспомогательная функция для определения цвета Match Score
+    // ===== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ =====
     function getScoreColor(score) {
-        if (score >= 80) return 'match-high';
-        if (score >= 50) return 'match-medium';
-        return 'match-low';
+        if (score >= 80) return 'bg-match-high';
+        if (score >= 50) return 'bg-match-medium';
+        return 'bg-match-low';
+    }
+    
+    function getScoreTextColor(score) {
+        if (score >= 80) return 'text-match-high';
+        if (score >= 50) return 'text-match-medium';
+        return 'text-match-low';
     }
 
-    // Вспомогательная функция для модального окна AI-объяснения
-    function showAIExplanation(title, explanation) {
-        alert(`${title} (Объяснение ИИ):\n\n${explanation}`);
+    function showAIExplanation(uniName, explanation) {
+        alert(`${uniName}\n\nОбъяснение ИИ:\n${explanation}`);
     }
 
-
-    // Функция рендеринга одной карточки
+    // ===== РЕНДЕРИНГ КАРТОЧКИ =====
     function renderCard(rec) {
         const uni = rec.university;
-        const grantPercent = Math.round(rec.grant_percentage);
-        const matchScore = Math.round(rec.match_score);
-        const scoreColor = getScoreColor(matchScore);
-        const grantColor = getScoreColor(grantPercent);
-        const uniId = uni.id;
+        const grantPercent = Math.round(rec.grant_percentage || 0);
+        const matchScore = Math.round(rec.match_score || 0);
+        const scoreColorClass = getScoreColor(matchScore);
+        const scoreTextColorClass = getScoreTextColor(matchScore);
+        const grantColorClass = getScoreColor(grantPercent);
+        const grantTextColorClass = getScoreTextColor(grantPercent);
+        const uniId = uni.id || '';
         
-        // Ключевая программа для отображения на карточке
-        const keyProgram = uni.programs[0] ? uni.programs[0].name : 'Нет данных';
+        const keyProgram = uni.programs && uni.programs[0] ? uni.programs[0].name : 'Нет данных';
 
-        // Создание HTML-карточки
         const card = document.createElement('div');
-        card.className = "flex flex-col rounded-xl shadow-lg bg-white dark:bg-gray-900/50 overflow-hidden";
+        card.className = "flex flex-col rounded-xl shadow-lg bg-white dark:bg-gray-900/50 overflow-hidden border border-gray-200 dark:border-gray-800";
         card.innerHTML = `
             <div class="flex flex-col md:flex-row items-stretch">
                 <div class="flex-shrink-0 w-full md:w-48 bg-gray-50 dark:bg-gray-800 p-6 flex items-center justify-center">
@@ -129,45 +149,47 @@
 
                 <div class="flex-1 p-6 flex flex-col justify-between gap-4">
                     <div>
-                        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">${uni.city}</p>
-                        <p class="text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white mt-1">${uni.name}</p>
+                        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">${uni.city || 'Казахстан'}</p>
+                        <p class="text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white mt-1">${uni.name || 'Университет'}</p>
                         <p class="text-base text-gray-600 dark:text-gray-300 mt-2">Ключевая программа: ${keyProgram}</p>
-                        <button class="text-xs font-medium text-primary hover:text-primary/80 mt-1 underline" 
-                                onclick="showAIExplanation('${uni.name}', \`${rec.ai_explanation}\`)">
+                        ${rec.ai_explanation ? `
+                        <button class="text-xs font-medium text-primary hover:text-primary/80 mt-2 underline" 
+                                onclick="showAIExplanation('${uni.name}', '${rec.ai_explanation.replace(/'/g, "\\'").replace(/\n/g, ' ')}')">
                             Посмотреть AI-объяснение
                         </button>
+                        ` : ''}
                     </div>
                     
                     <div class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-end mt-4">
-                        <a href="sravnenie.html?add=${uniId}" class="flex items-center justify-center gap-2 min-w-[84px] cursor-pointer overflow-hidden rounded-lg h-10 px-4 bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold leading-normal tracking-wide">
+                        <a href="sravnenie.html?add=${uniId}" class="flex items-center justify-center gap-2 min-w-[84px] cursor-pointer overflow-hidden rounded-lg h-10 px-4 bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold leading-normal tracking-wide hover:bg-primary/20 transition-all">
                             <span class="material-symbols-outlined text-base">add_circle_outline</span>
-                            <span class="truncate">Добавить к сравнению</span>
+                            <span class="truncate">К сравнению</span>
                         </a>
-                        <a href="vuz.html?id=${uniId}" class="flex items-center justify-center min-w-[84px] cursor-pointer overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide">
+                        <a href="vuz.html?id=${uniId}" class="flex items-center justify-center min-w-[84px] cursor-pointer overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:bg-opacity-90 transition-all">
                             <span class="truncate">Подробнее</span>
                         </a>
                     </div>
                 </div>
 
-                <div class="flex-shrink-0 w-full md:w-64 border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-800 p-6 flex flex-col justify-center gap-5">
+                <div class="flex-shrink-0 w-full md:w-64 border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-800 p-6 flex flex-col justify-center gap-5 bg-gray-50/50 dark:bg-gray-800/50">
                     
                     <div class="flex flex-col gap-2">
                         <div class="flex justify-between items-baseline">
-                            <p class="text-sm font-medium text-gray-900 dark:text-white">Совпадение (Match Score)</p>
-                            <p class="text-lg font-bold text-${scoreColor}">${matchScore}%</p>
+                            <p class="text-sm font-medium text-gray-900 dark:text-white">Совпадение</p>
+                            <p class="text-lg font-bold ${scoreTextColorClass}">${matchScore}%</p>
                         </div>
                         <div class="w-full rounded-full bg-gray-200 dark:bg-gray-700 h-2">
-                            <div class="h-2 rounded-full bg-${scoreColor}" style="width: ${matchScore}%;"></div>
+                            <div class="h-2 rounded-full ${scoreColorClass}" style="width: ${matchScore}%;"></div>
                         </div>
                     </div>
                     
                     <div class="flex flex-col gap-2">
                         <div class="flex justify-between items-baseline">
                             <p class="text-sm font-medium text-gray-900 dark:text-white">Шанс на грант</p>
-                            <p class="text-sm font-medium text-${grantColor}">${rec.grant_chance}</p>
+                            <p class="text-sm font-medium ${grantTextColorClass}">${rec.grant_chance || 'Нет данных'}</p>
                         </div>
                         <div class="w-full rounded-full bg-gray-200 dark:bg-gray-700 h-2">
-                            <div class="h-2 rounded-full bg-${grantColor}" style="width: ${grantPercent}%;"></div>
+                            <div class="h-2 rounded-full ${grantColorClass}" style="width: ${grantPercent}%;"></div>
                         </div>
                     </div>
                 </div>
@@ -176,69 +198,70 @@
         container.appendChild(card);
     }
 
-    // Основная логика загрузки данных
+    // ===== ЗАГРУЗКА РЕЗУЛЬТАТОВ =====
     async function loadRecommendations() {
-        // Проверяем, пришли ли данные из чата
-        const storedData = localStorage.getItem('recommendations_data');
-        let data = null;
-
-        if (storedData) {
-            data = JSON.parse(storedData);
-            // Очищаем, чтобы при перезагрузке страницы не было старых данных
-            // localStorage.removeItem('recommendations_data'); 
-        }
-
-        // Если данные есть, рендерим их
-        if (data && data.recommendations && Array.isArray(data.recommendations) && data.recommendations.length > 0) {
+        try {
+            // Читаем данные из localStorage
+            const storedData = localStorage.getItem('search_results');
+            const storedQuery = localStorage.getItem('search_query');
+            
+            if (storedQuery) {
+                queryDisplay.textContent = storedQuery;
+            }
+            
+            if (!storedData) {
+                throw new Error('Результаты поиска не найдены. Пожалуйста, выполните новый поиск.');
+            }
+            
+            const data = JSON.parse(storedData);
+            
+            // Проверяем наличие рекомендаций
+            if (!data.recommendations || !Array.isArray(data.recommendations) || data.recommendations.length === 0) {
+                container.innerHTML = `
+                    <div class="flex flex-col items-center justify-center p-12 bg-white dark:bg-gray-900/50 rounded-xl border border-gray-200 dark:border-gray-800">
+                        <span class="material-symbols-outlined text-6xl text-gray-300 dark:text-gray-700 mb-4">search_off</span>
+                        <p class="text-lg font-medium text-gray-900 dark:text-white mb-2">К сожалению, вузы не найдены</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 text-center max-w-md mb-4">Попробуйте изменить параметры поиска или уточните свой запрос</p>
+                        <a href="index.html" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-all">
+                            <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+                            Вернуться к поиску
+                        </a>
+                    </div>
+                `;
+                title.textContent = 'Результаты поиска';
+                return;
+            }
+            
+            // Очищаем контейнер и рендерим карточки
             container.innerHTML = '';
             const totalFound = data.recommendations.length;
-            title.innerHTML = `По вашему запросу ИИ подобрал для вас ТОП-${totalFound} вариантов в сфере IT`;
+            title.textContent = `ИИ подобрал для вас ТОП-${totalFound} ${totalFound === 1 ? 'вариант' : totalFound < 5 ? 'варианта' : 'вариантов'}`;
+            
             data.recommendations.forEach(renderCard);
-        } else {
-            // Если данных нет, делаем обычный запрос (фоллбэк, как было раньше)
-            // Это также может быть вызвано, если пользователь просто открыл result.html
-            await loadRecommendationsFallback();
+            
+        } catch (error) {
+            console.error('Ошибка при загрузке рекомендаций:', error);
+            container.innerHTML = `
+                <div class="flex flex-col items-center justify-center p-12 bg-white dark:bg-gray-900/50 rounded-xl border border-gray-200 dark:border-gray-800">
+                    <span class="material-symbols-outlined text-6xl text-red-400 mb-4">error</span>
+                    <p class="text-lg font-medium text-gray-900 dark:text-white mb-2">Произошла ошибка</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 text-center max-w-md mb-4">${error.message}</p>
+                    <a href="index.html" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-all">
+                        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+                        Вернуться к поиску
+                    </a>
+                </div>
+            `;
+            title.textContent = 'Ошибка загрузки';
+            queryDisplay.textContent = 'Не удалось загрузить запрос';
         }
     }
     
-    // Новая фоллбэк функция (дублирует старую логику)
-    async function loadRecommendationsFallback() {
-         container.innerHTML = '<div class="p-6 text-center text-primary font-bold">Данные чата не найдены. Выполняется стандартный запрос...</div>';
-         
-         try {
-            const response = await fetch(`${API_BASE_URL}/recommend-by-text`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ query: DEFAULT_QUERY })
-            });
-            // ... (дальше логика из вашего старого loadRecommendations) ...
-            
-             if (!response.ok) {
-                const errorBody = await response.json().catch(() => ({ detail: `Unknown error. Status: ${response.status}` }));
-                throw new Error(`Ошибка API: ${errorBody.detail}`);
-            }
-
-            const data = await response.json();
-            
-            if (data && data.recommendations && Array.isArray(data.recommendations) && data.recommendations.length > 0) {
-                container.innerHTML = '';
-                const totalFound = data.recommendations.length;
-                title.innerHTML = `По вашему запросу ИИ подобрал для вас ТОП-${totalFound} вариантов в сфере IT`;
-                data.recommendations.forEach(renderCard);
-            } else {
-                container.innerHTML = '<div class="p-6 text-center text-gray-500 dark:text-gray-400">К сожалению, по вашим критериям вузы не найдены. Попробуйте изменить запрос.</div>';
-                title.innerHTML = `Результаты подбора`;
-            }
-
-
-         } catch (error) {
-            console.error("Ошибка при загрузке рекомендаций:", error);
-            container.innerHTML = `<div class="p-6 text-center text-red-500">Не удалось загрузить рекомендации. Ошибка: ${error.message}</div>`;
-            title.innerHTML = `Ошибка загрузки`;
-        }
-    }
+    // Экспонируем функцию в глобальную область для onclick
+    window.showAIExplanation = showAIExplanation;
     
-    // Запускаем загрузку
+    // Запускаем загрузку при загрузке страницы
     loadRecommendations();
 </script>
-</body></html>
+</body>
+</html>
