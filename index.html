@@ -178,14 +178,12 @@
 
 <script>
     // ===== КОНФИГУРАЦИЯ API =====
-    // TODO: После деплоя backend замените на реальный URL (например: https://your-app.onrender.com/api)
-    const API_BASE_URL = 'http://127.0.0.1:8000/api';
+    const API_BASE_URL = 'https://uniguide-backend.onrender.com/api';
     
     // ===== ФУНКЦИИ ПОИСКА =====
     const searchForm = document.getElementById('search-form');
     const searchInput = document.getElementById('search-input');
     
-    // Функция для установки текста поиска через чипы
     function setSearchQuery(text) {
         const currentValue = searchInput.value.trim();
         if (currentValue) {
@@ -196,7 +194,6 @@
         searchInput.focus();
     }
     
-    // Обработчик отправки формы поиска
     searchForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
@@ -206,14 +203,12 @@
             return;
         }
         
-        // Показываем индикатор загрузки
         const submitButton = searchForm.querySelector('button[type="submit"]');
         const originalText = submitButton.innerHTML;
         submitButton.innerHTML = '<span class="truncate">Поиск...</span>';
         submitButton.disabled = true;
         
         try {
-            // Отправляем запрос на backend
             const response = await fetch(`${API_BASE_URL}/recommend-by-text`, {
                 method: 'POST',
                 headers: {
@@ -227,25 +222,18 @@
             }
             
             const data = await response.json();
-            
-            // Сохраняем результаты в localStorage для передачи на страницу результатов
             localStorage.setItem('search_results', JSON.stringify(data));
             localStorage.setItem('search_query', query);
-            
-            // Перенаправляем на страницу результатов
             window.location.href = 'result.html';
             
         } catch (error) {
             console.error('Ошибка при поиске:', error);
-            alert('Произошла ошибка при поиске. Пожалуйста, попробуйте еще раз.\n\nОшибка: ' + error.message);
-            
-            // Восстанавливаем кнопку
+            alert('Произошла ошибка при поиске. Пожалуйста, подождите 30 секунд (сервер просыпается) и попробуйте еще раз.\n\nОшибка: ' + error.message);
             submitButton.innerHTML = originalText;
             submitButton.disabled = false;
         }
     });
     
-    // Экспонируем функцию в глобальную область видимости для onclick в HTML
     window.setSearchQuery = setSearchQuery;
 </script>
 </body>
