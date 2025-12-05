@@ -1,261 +1,252 @@
 <!DOCTYPE html>
-
-<html class="light" lang="ru"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Главный экран UniGuide</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#137fec",
-              "background-light": "#f6f7f8",
-              "background-dark": "#101922",
+<html class="light" lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Главный экран UniGuide</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
             },
-            fontFamily: {
-              "display": ["Inter", "sans-serif"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-          },
-        },
-      }
+        }
     </script>
-<style>
-      .material-symbols-outlined {
-        font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
-      }
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
     </style>
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark">
 <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<div class="flex flex-1 justify-center">
-<div class="layout-content-container flex flex-col w-full max-w-screen-xl flex-1">
-<!-- TopNavBar -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-gray-200 dark:border-b-gray-700 px-4 sm:px-6 lg:px-10 py-3 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-50">
-<div class="flex items-center gap-4 text-gray-900 dark:text-white">
-<div class="text-primary">
-<span class="material-symbols-outlined" style="font-size: 24px;">school</span>
-</div>
-<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">UniGuide</h2>
-</div>
-<div class="hidden md:flex flex-1 justify-center gap-8">
-<div class="flex items-center gap-9">
-<a class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Университеты</a>
-<a class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Специальности</a>
-<a class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">О проекте</a>
-</div>
-</div>
-<div class="flex items-center justify-end">
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-all">
-<span class="truncate">Войти</span>
-</button>
-</div>
-</header>
-<main class="flex-grow">
-<!-- HeroSection -->
-<div class="@container">
-<div class="p-4 sm:p-6 lg:p-8">
-<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 rounded-xl items-center justify-center p-4 text-center" data-alt="Abstract blue and purple gradient background" style='background-image: linear-gradient(rgba(19, 127, 236, 0.1) 0%, rgba(16, 25, 34, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTdYRrw0RMpHJATr7W3gbTyAH33Q9xuBGzlcseVVNAy4NFpBFuthDScuVPujYhwccvpA9iX9V1zOxFDkw-gHWU2FxD4ohk8-Z2cIooIVa_i6cAQnauD5fJG9BQjfcrFVCzi1iCmGGCeMUgt4HaX0QP68Xm0a3szIWts53Rz2DaA1aC90tKQGV72kmdsS_8oI6u7CHHS0UjVPNuNeDpD9pqTN5mt-UtDO6noVqJec4zKESLmu_DuBi4cC4v6SZ8EGT2RYQlHVSpz4g");'>
-<div class="flex flex-col gap-2">
-<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
-                                            Найди свой идеальный вуз в Казахстане
-                                        </h1>
-<h2 class="text-white/90 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                                            Ваш навигатор в мире вузов. Используйте наш AI-помощник для поиска.
-                                        </h2>
-</div>
-<label class="flex flex-col min-w-40 h-14 w-full max-w-[640px] @[480px]:h-16">
-<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-lg">
-<div class="text-gray-500 flex bg-white items-center justify-center pl-[15px] rounded-l-xl border-y border-l border-gray-200">
-<span class="material-symbols-outlined">search</span>
-</div>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-gray-900 focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-inset border-y border-gray-200 bg-white h-full placeholder:text-gray-500 px-2 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal" placeholder="Я набрал 90 баллов на ЕНТ, хочу IT-специальность в Алматы с грантом" value=""/>
-<div class="flex items-center justify-center rounded-r-xl border-y border-r border-gray-200 bg-white pr-[7px]">
-<a href="result.html" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-opacity-90 transition-all">
-<span class="truncate">Найти вузы</span>
-</a>
-</div>
-</div>
-</label>
-<!-- Chips -->
-<div class="flex gap-3 pt-4 flex-wrap justify-center">
-<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light/20 backdrop-blur-sm px-4 cursor-pointer hover:bg-background-light/40 transition-colors">
-<p class="text-white text-sm font-medium leading-normal">Алматы</p>
-</div>
-<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light/20 backdrop-blur-sm px-4 cursor-pointer hover:bg-background-light/40 transition-colors">
-<p class="text-white text-sm font-medium leading-normal">IT</p>
-</div>
-<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light/20 backdrop-blur-sm px-4 cursor-pointer hover:bg-background-light/40 transition-colors">
-<p class="text-white text-sm font-medium leading-normal">С грантом</p>
-</div>
-<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light/20 backdrop-blur-sm px-4 cursor-pointer hover:bg-background-light/40 transition-colors">
-<p class="text-white text-sm font-medium leading-normal">Медицина</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- FeatureSection -->
-<div class="flex flex-col gap-10 px-4 sm:px-6 lg:px-10 py-10 @container">
-<div class="max-w-4xl mx-auto text-center">
-<h1 class="text-gray-900 dark:text-white text-3xl font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
-                                    Почему UniGuide?
-                                </h1>
-<p class="text-gray-700 dark:text-gray-300 text-base font-normal leading-normal mt-4">
-                                    Мы предоставляем самые современные инструменты для выбора вашего будущего.
-                                </p>
-</div>
-<div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 max-w-5xl mx-auto">
-<div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-6 flex-col text-center items-center">
-<div class="text-primary bg-primary/20 p-3 rounded-full">
-<span class="material-symbols-outlined" style="font-size: 28px;">calculate</span>
-</div>
-<div class="flex flex-col gap-1">
-<h2 class="text-gray-900 dark:text-white text-base font-bold leading-tight">Учёт баллов ЕНТ</h2>
-<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Анализируйте свои шансы на поступление на основе реальных данных.</p>
-</div>
-</div>
-<div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-6 flex-col text-center items-center">
-<div class="text-primary bg-primary/20 p-3 rounded-full">
-<span class="material-symbols-outlined" style="font-size: 28px;">balance</span>
-</div>
-<div class="flex flex-col gap-1">
-<h2 class="text-gray-900 dark:text-white text-base font-bold leading-tight">Сравнение вузов</h2>
-<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Сравнивайте университеты по ключевым параметрам в удобном формате.</p>
-</div>
-</div>
-<div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-6 flex-col text-center items-center">
-<div class="text-primary bg-primary/20 p-3 rounded-full">
-<span class="material-symbols-outlined" style="font-size: 28px;">3d_rotation</span>
-</div>
-<div class="flex flex-col gap-1">
-<h2 class="text-gray-900 dark:text-white text-base font-bold leading-tight">Виртуальные 3D-туры</h2>
-<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Посетите кампусы ведущих вузов страны, не выходя из дома.</p>
-</div>
-</div>
-</div>
-</div>
-</main>
-<!-- Footer -->
-<footer class="flex flex-col gap-8 px-5 py-10 text-center @container border-t border-gray-200 dark:border-gray-700 mt-10">
-<div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-<a class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Контакты</a>
-<a class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Политика конфиденциальности</a>
-<a class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Пользовательское соглашение</a>
-</div>
-<p class="text-gray-500 dark:text-gray-500 text-sm font-normal leading-normal">© 2024 UniGuide. Все права защищены.</p>
-</footer>
-</div>
-</div>
-</div>
-</div>
-<script>
-    const API_BASE_URL = '[http://127.0.0.1:8000/api](http://127.0.0.1:8000/api)';
-    const chatInput = document.getElementById('chat-input');
-    const sendButton = document.getElementById('send-button');
-    const chatWindow = document.getElementById('chat-window'); // Нужен контейнер для истории
-    const mainForm = document.getElementById('main-form'); // Нужна форма вокруг инпута
-
-    let chatState = {}; // Текущее состояние StudentRequest
-
-    // Функция отрисовки сообщения в окне чата
-    function renderMessage(sender, message, isAI = false) {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `flex w-full ${isAI ? 'justify-start' : 'justify-end'} mb-4`;
-        
-        const bubbleClass = isAI 
-            ? 'bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-tr-xl rounded-bl-xl rounded-br-xl' 
-            : 'bg-primary text-white rounded-tl-xl rounded-bl-xl rounded-br-xl';
-        
-        messageDiv.innerHTML = `
-            <div class="max-w-xs p-3 shadow-md ${bubbleClass}">
-                ${message}
+    <div class="layout-container flex h-full grow flex-col">
+        <div class="flex flex-1 justify-center">
+            <div class="layout-content-container flex flex-col w-full max-w-screen-xl flex-1">
+                <!-- TopNavBar -->
+                <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-gray-200 dark:border-b-gray-700 px-4 sm:px-6 lg:px-10 py-3 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-50">
+                    <div class="flex items-center gap-4 text-gray-900 dark:text-white">
+                        <div class="text-primary">
+                            <span class="material-symbols-outlined" style="font-size: 24px;">school</span>
+                        </div>
+                        <h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">UniGuide</h2>
+                    </div>
+                    <div class="hidden md:flex flex-1 justify-center gap-8">
+                        <div class="flex items-center gap-9">
+                            <a class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Университеты</a>
+                            <a class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Специальности</a>
+                            <a class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">О проекте</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-end">
+                        <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-all">
+                            <span class="truncate">Войти</span>
+                        </button>
+                    </div>
+                </header>
+                
+                <main class="flex-grow">
+                    <!-- HeroSection -->
+                    <div class="@container">
+                        <div class="p-4 sm:p-6 lg:p-8">
+                            <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 rounded-xl items-center justify-center p-4 text-center" 
+                                 style='background-image: linear-gradient(rgba(19, 127, 236, 0.1) 0%, rgba(16, 25, 34, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTdYRrw0RMpHJATr7W3gbTyAH33Q9xuBGzlcseVVNAy4NFpBFuthDScuVPujYhwccvpA9iX9V1zOxFDkw-gHWU2FxD4ohk8-Z2cIooIVa_i6cAQnauD5fJG9BQjfcrFVCzi1iCmGGCeMUgt4HaX0QP68Xm0a3szIWts53Rz2DaA1aC90tKQGV72kmdsS_8oI6u7CHHS0UjVPNuNeDpD9pqTN5mt-UtDO6noVqJec4zKESLmu_DuBi4cC4v6SZ8EGT2RYQlHVSpz4g");'>
+                                <div class="flex flex-col gap-2">
+                                    <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                        Найди свой идеальный вуз в Казахстане
+                                    </h1>
+                                    <h2 class="text-white/90 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                                        Ваш навигатор в мире вузов. Используйте наш AI-помощник для поиска.
+                                    </h2>
+                                </div>
+                                
+                                <!-- Search Form -->
+                                <form id="search-form" class="w-full max-w-[640px]">
+                                    <label class="flex flex-col min-w-40 h-14 w-full @[480px]:h-16">
+                                        <div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-lg">
+                                            <div class="text-gray-500 flex bg-white items-center justify-center pl-[15px] rounded-l-xl border-y border-l border-gray-200">
+                                                <span class="material-symbols-outlined">search</span>
+                                            </div>
+                                            <input 
+                                                id="search-input" 
+                                                name="query"
+                                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-gray-900 focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-inset border-y border-gray-200 bg-white h-full placeholder:text-gray-500 px-2 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal" 
+                                                placeholder="Я набрал 90 баллов на ЕНТ, хочу IT-специальность в Алматы с грантом" 
+                                                value=""
+                                                required
+                                            />
+                                            <div class="flex items-center justify-center rounded-r-xl border-y border-r border-gray-200 bg-white pr-[7px]">
+                                                <button 
+                                                    type="submit"
+                                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-opacity-90 transition-all">
+                                                    <span class="truncate">Найти вузы</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </form>
+                                
+                                <!-- Chips -->
+                                <div class="flex gap-3 pt-4 flex-wrap justify-center">
+                                    <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light/20 backdrop-blur-sm px-4 cursor-pointer hover:bg-background-light/40 transition-colors" onclick="setSearchQuery('Алматы')">
+                                        <p class="text-white text-sm font-medium leading-normal">Алматы</p>
+                                    </div>
+                                    <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light/20 backdrop-blur-sm px-4 cursor-pointer hover:bg-background-light/40 transition-colors" onclick="setSearchQuery('IT')">
+                                        <p class="text-white text-sm font-medium leading-normal">IT</p>
+                                    </div>
+                                    <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light/20 backdrop-blur-sm px-4 cursor-pointer hover:bg-background-light/40 transition-colors" onclick="setSearchQuery('С грантом')">
+                                        <p class="text-white text-sm font-medium leading-normal">С грантом</p>
+                                    </div>
+                                    <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light/20 backdrop-blur-sm px-4 cursor-pointer hover:bg-background-light/40 transition-colors" onclick="setSearchQuery('Медицина')">
+                                        <p class="text-white text-sm font-medium leading-normal">Медицина</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FeatureSection -->
+                    <div class="flex flex-col gap-10 px-4 sm:px-6 lg:px-10 py-10 @container">
+                        <div class="max-w-4xl mx-auto text-center">
+                            <h1 class="text-gray-900 dark:text-white text-3xl font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                Почему UniGuide?
+                            </h1>
+                            <p class="text-gray-700 dark:text-gray-300 text-base font-normal leading-normal mt-4">
+                                Мы предоставляем самые современные инструменты для выбора вашего будущего.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 max-w-5xl mx-auto">
+                            <div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-6 flex-col text-center items-center">
+                                <div class="text-primary bg-primary/20 p-3 rounded-full">
+                                    <span class="material-symbols-outlined" style="font-size: 28px;">calculate</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h2 class="text-gray-900 dark:text-white text-base font-bold leading-tight">Учёт баллов ЕНТ</h2>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Анализируйте свои шансы на поступление на основе реальных данных.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-6 flex-col text-center items-center">
+                                <div class="text-primary bg-primary/20 p-3 rounded-full">
+                                    <span class="material-symbols-outlined" style="font-size: 28px;">balance</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h2 class="text-gray-900 dark:text-white text-base font-bold leading-tight">Сравнение вузов</h2>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Сравнивайте университеты по ключевым параметрам в удобном формате.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-6 flex-col text-center items-center">
+                                <div class="text-primary bg-primary/20 p-3 rounded-full">
+                                    <span class="material-symbols-outlined" style="font-size: 28px;">3d_rotation</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h2 class="text-gray-900 dark:text-white text-base font-bold leading-tight">Виртуальные 3D-туры</h2>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Посетите кампусы ведущих вузов страны, не выходя из дома.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                
+                <!-- Footer -->
+                <footer class="flex flex-col gap-8 px-5 py-10 text-center @container border-t border-gray-200 dark:border-gray-700 mt-10">
+                    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+                        <a class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Контакты</a>
+                        <a class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Политика конфиденциальности</a>
+                        <a class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Пользовательское соглашение</a>
+                    </div>
+                    <p class="text-gray-500 dark:text-gray-500 text-sm font-normal leading-normal">© 2024 UniGuide. Все права защищены.</p>
+                </footer>
             </div>
-        `;
-        chatWindow.appendChild(messageDiv);
-        chatWindow.scrollTop = chatWindow.scrollHeight; // Прокрутка вниз
-    }
+        </div>
+    </div>
+</div>
 
-    // Обработчик отправки сообщения
-    async function sendMessage() {
-        const userMessage = chatInput.value.trim();
-        if (!userMessage) return;
-
-        renderMessage('user', userMessage);
-        chatInput.value = '';
-        sendButton.disabled = true;
-
-        try {
-            const response = await fetch(`${API_BASE_URL}/chat`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    message: userMessage,
-                    current_state: chatState
-                })
-            });
-
-            const result = await response.json();
-            
-            // Обновляем состояние
-            chatState = result.state || chatState;
-
-            // Выводим ответ AI
-            renderMessage('ai', result.response, true);
-            
-            // Если AI вернул рекомендации, перенаправляем на страницу результатов
-            if (result.recommendations && result.recommendations.length > 0) {
-                renderMessage('ai', "Отлично, я нашел для вас подходящие вузы! Перенаправляю на страницу результатов...", true);
-                
-                // ВАЖНО: Хранение данных в LocalStorage для передачи на result.html
-                localStorage.setItem('recommendations_data', JSON.stringify(result));
-                
-                // Ждем немного, чтобы пользователь прочитал финальное сообщение
-                setTimeout(() => {
-                    window.location.href = 'result.html?source=chat';
-                }, 2000);
-            }
-            
-        } catch (error) {
-            console.error("Ошибка чат-бота:", error);
-            renderMessage('ai', "Произошла ошибка при обработке вашего запроса. Попробуйте еще раз.", true);
-        } finally {
-            sendButton.disabled = false;
+<script>
+    // ===== КОНФИГУРАЦИЯ API =====
+    // TODO: После деплоя backend замените на реальный URL (например: https://your-app.onrender.com/api)
+    const API_BASE_URL = 'http://127.0.0.1:8000/api';
+    
+    // ===== ФУНКЦИИ ПОИСКА =====
+    const searchForm = document.getElementById('search-form');
+    const searchInput = document.getElementById('search-input');
+    
+    // Функция для установки текста поиска через чипы
+    function setSearchQuery(text) {
+        const currentValue = searchInput.value.trim();
+        if (currentValue) {
+            searchInput.value = currentValue + ' ' + text;
+        } else {
+            searchInput.value = text;
         }
+        searchInput.focus();
     }
     
-    // Запуск чата: Приветствие
-    function startChat() {
-        const welcomeMessage = "Здравствуйте! Я ваш AI-помощник UniGuide. Чтобы начать подбор вуза, пожалуйста, скажите, какой балл ЕНТ вы набрали?";
-        renderMessage('ai', welcomeMessage, true);
-    }
-
-    // Привязка событий
-    sendButton.addEventListener('click', sendMessage);
-    chatInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            e.preventDefault(); 
-            sendMessage();
+    // Обработчик отправки формы поиска
+    searchForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const query = searchInput.value.trim();
+        if (!query) {
+            alert('Пожалуйста, введите запрос для поиска');
+            return;
+        }
+        
+        // Показываем индикатор загрузки
+        const submitButton = searchForm.querySelector('button[type="submit"]');
+        const originalText = submitButton.innerHTML;
+        submitButton.innerHTML = '<span class="truncate">Поиск...</span>';
+        submitButton.disabled = true;
+        
+        try {
+            // Отправляем запрос на backend
+            const response = await fetch(`${API_BASE_URL}/recommend-by-text`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ query: query })
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            
+            // Сохраняем результаты в localStorage для передачи на страницу результатов
+            localStorage.setItem('search_results', JSON.stringify(data));
+            localStorage.setItem('search_query', query);
+            
+            // Перенаправляем на страницу результатов
+            window.location.href = 'result.html';
+            
+        } catch (error) {
+            console.error('Ошибка при поиске:', error);
+            alert('Произошла ошибка при поиске. Пожалуйста, попробуйте еще раз.\n\nОшибка: ' + error.message);
+            
+            // Восстанавливаем кнопку
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
         }
     });
-
-    // Инициализация при загрузке страницы
-    startChat();
+    
+    // Экспонируем функцию в глобальную область видимости для onclick в HTML
+    window.setSearchQuery = setSearchQuery;
 </script>
-<<<<<<< HEAD
-</body></html>
-=======
-</body></html>
->>>>>>> 5784c7cb6a587768a866adc265c7af43bb444fb3
+</body>
+</html>
