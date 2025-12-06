@@ -186,8 +186,10 @@
     async function loadRecommendations() {
         try {
             // ЧИТАЕМ ИЗ sessionStorage (а не localStorage!)
+            // ЧИТАЕМ ИЗ sessionStorage (а не localStorage!)
             const storedData = sessionStorage.getItem('search_results');
             const storedQuery = sessionStorage.getItem('search_query');
+
             
             if (storedQuery) queryDisplay.textContent = storedQuery;
             if (!storedData) throw new Error('Результаты поиска не найдены.');
