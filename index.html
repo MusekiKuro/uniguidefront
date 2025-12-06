@@ -214,8 +214,10 @@
             const data = await response.json();
             
             // СОХРАНЕНИЕ В sessionStorage
+            // СОХРАНЕНИЕ В sessionStorage
             sessionStorage.setItem('search_results', JSON.stringify(data));
             sessionStorage.setItem('search_query', query);
+
             
             // CACHE-BUSTING: добавляем timestamp чтобы браузер не кэшировал
             window.location.href = 'result.html?t=' + Date.now();
