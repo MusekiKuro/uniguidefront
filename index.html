@@ -198,9 +198,9 @@
         submitButton.innerHTML = '<span class="truncate">Поиск...</span>';
         submitButton.disabled = true;
         
-        // ОЧИСТКА СТАРЫХ ДАННЫХ
-        sessionStorage.removeItem('search_results');
-        sessionStorage.removeItem('search_query');
+        // ОЧИСТКА ВСЕХ СТАРЫХ ДАННЫХ
+        localStorage.clear();
+        sessionStorage.clear();
         
         try {
             const response = await fetch(`${API_BASE_URL}/recommend-by-text`, {
@@ -213,10 +213,12 @@
             
             const data = await response.json();
             
-            // СОХРАНЕНИЕ В sessionStorage (живет только до закрытия вкладки)
+            // СОХРАНЕНИЕ В sessionStorage
             sessionStorage.setItem('search_results', JSON.stringify(data));
             sessionStorage.setItem('search_query', query);
-            window.location.href = 'result.html';
+            
+            // CACHE-BUSTING: добавляем timestamp чтобы браузер не кэшировал
+            window.location.href = 'result.html?t=' + Date.now();
             
         } catch (error) {
             console.error('Ошибка:', error);
