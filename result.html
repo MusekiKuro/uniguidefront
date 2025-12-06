@@ -98,7 +98,6 @@
 </div>
 
 <script>
-    const API_BASE_URL = 'https://uniguide-backend.onrender.com/api';
     const container = document.getElementById('recommendations-container');
     const title = document.getElementById('result-title');
     const queryDisplay = document.getElementById('search-query-display');
@@ -144,7 +143,7 @@
                         <p class="text-base text-gray-600 dark:text-gray-300 mt-2">Ключевая программа: ${keyProgram}</p>
                         ${rec.ai_explanation ? `
                         <button class="text-xs font-medium text-primary hover:text-primary/80 mt-2 underline" 
-                                onclick="showAIExplanation('${uni.name}', '${rec.ai_explanation.replace(/'/g, "\\'").replace(/\n/g, ' ')}')">
+                                onclick="showAIExplanation('${uni.name}', '${rec.ai_explanation.replace(/'/g, "\\'" ).replace(/\n/g, ' ')}')">
                             Посмотреть AI-объяснение
                         </button>
                         ` : ''}
@@ -186,8 +185,9 @@
 
     async function loadRecommendations() {
         try {
-            const storedData = localStorage.getItem('search_results');
-            const storedQuery = localStorage.getItem('search_query');
+            // ЧИТАЕМ ИЗ sessionStorage (а не localStorage!)
+            const storedData = sessionStorage.getItem('search_results');
+            const storedQuery = sessionStorage.getItem('search_query');
             
             if (storedQuery) queryDisplay.textContent = storedQuery;
             if (!storedData) throw new Error('Результаты поиска не найдены.');
