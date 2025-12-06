@@ -38,7 +38,6 @@
     <div class="layout-container flex h-full grow flex-col">
         <div class="flex flex-1 justify-center">
             <div class="layout-content-container flex flex-col w-full max-w-screen-xl flex-1">
-                <!-- TopNavBar -->
                 <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-gray-200 dark:border-b-gray-700 px-4 sm:px-6 lg:px-10 py-3 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-50">
                     <div class="flex items-center gap-4 text-gray-900 dark:text-white">
                         <div class="text-primary">
@@ -61,7 +60,6 @@
                 </header>
                 
                 <main class="flex-grow">
-                    <!-- HeroSection -->
                     <div class="@container">
                         <div class="p-4 sm:p-6 lg:p-8">
                             <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 rounded-xl items-center justify-center p-4 text-center" 
@@ -75,7 +73,6 @@
                                     </h2>
                                 </div>
                                 
-                                <!-- Search Form -->
                                 <form id="search-form" class="w-full max-w-[640px]">
                                     <label class="flex flex-col min-w-40 h-14 w-full @[480px]:h-16">
                                         <div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-lg">
@@ -101,7 +98,6 @@
                                     </label>
                                 </form>
                                 
-                                <!-- Chips -->
                                 <div class="flex gap-3 pt-4 flex-wrap justify-center">
                                     <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light/20 backdrop-blur-sm px-4 cursor-pointer hover:bg-background-light/40 transition-colors" onclick="setSearchQuery('Алматы')">
                                         <p class="text-white text-sm font-medium leading-normal">Алматы</p>
@@ -120,7 +116,6 @@
                         </div>
                     </div>
                     
-                    <!-- FeatureSection -->
                     <div class="flex flex-col gap-10 px-4 sm:px-6 lg:px-10 py-10 @container">
                         <div class="max-w-4xl mx-auto text-center">
                             <h1 class="text-gray-900 dark:text-white text-3xl font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
@@ -162,7 +157,6 @@
                     </div>
                 </main>
                 
-                <!-- Footer -->
                 <footer class="flex flex-col gap-8 px-5 py-10 text-center @container border-t border-gray-200 dark:border-gray-700 mt-10">
                     <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
                         <a class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Контакты</a>
@@ -177,10 +171,7 @@
 </div>
 
 <script>
-    // ===== КОНФИГУРАЦИЯ API =====
     const API_BASE_URL = 'https://uniguide-backend.onrender.com/api';
-    
-    // ===== ФУНКЦИИ ПОИСКА =====
     const searchForm = document.getElementById('search-form');
     const searchInput = document.getElementById('search-input');
     
@@ -196,7 +187,6 @@
     
     searchForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        
         const query = searchInput.value.trim();
         if (!query) {
             alert('Пожалуйста, введите запрос для поиска');
@@ -208,27 +198,29 @@
         submitButton.innerHTML = '<span class="truncate">Поиск...</span>';
         submitButton.disabled = true;
         
+        // ОЧИСТКА СТАРЫХ ДАННЫХ
+        sessionStorage.removeItem('search_results');
+        sessionStorage.removeItem('search_query');
+        
         try {
             const response = await fetch(`${API_BASE_URL}/recommend-by-text`, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ query: query })
             });
             
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
             
             const data = await response.json();
-            localStorage.setItem('search_results', JSON.stringify(data));
-            localStorage.setItem('search_query', query);
+            
+            // СОХРАНЕНИЕ В sessionStorage (живет только до закрытия вкладки)
+            sessionStorage.setItem('search_results', JSON.stringify(data));
+            sessionStorage.setItem('search_query', query);
             window.location.href = 'result.html';
             
         } catch (error) {
-            console.error('Ошибка при поиске:', error);
-            alert('Произошла ошибка при поиске. Пожалуйста, подождите 30 секунд (сервер просыпается) и попробуйте еще раз.\n\nОшибка: ' + error.message);
+            console.error('Ошибка:', error);
+            alert('Произошла ошибка. Подождите 30 сек (сервер просыпается) и попробуйте еще раз.\n\nОшибка: ' + error.message);
             submitButton.innerHTML = originalText;
             submitButton.disabled = false;
         }
